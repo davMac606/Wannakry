@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            mark {
+  background-color: rgb(0, 255, 0);
+  color: black;
+}
+
+body {
+font-family: "Arial", sans-serif;
+font-size:20px;
+}
+    </style>
+
+        <meta charset="UTF=8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="halalpig.png" type="image/icon type">
+        
+        <title>Áreas de TI</title>
+
+        <script type="text/javascript">
+            function display_c(){
+                var refresh=1000; 
+                mytime = setTimeout('display_ct()',refresh)
+            }
+
+            function display_ct() {
+                var x = new Date;
+                document.getElementById('ct').innerHTML = x;
+                display_c();
+            }
+        </script>
+	</head>
+    <body onload=display_ct();>
+
+<div id="testTime" class="testTime">
+
+        <p>Horário:<span style= color:red  id="ct"></span></p>
+
+    </div>
+        <hr>
+
+    <hr>
+
+    <h1>Horário das Aulas</h1>
+
+    <h1>Na sexta-feira o usuário irá <span id="msg"></span></h1>
+    <table border=1 cellpadding = 4 bgcolor="#B3D9FF">
+        <caption>Horário das aulas</caption>
+        <tr>
+
+            <th>Horários</th>
+           <th>Segunda</th>
+           <th>Terça</th>
+           <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+        </tr>
+
+        <tr>
+            <th>07:35</th>
+            <td>Geografia(Camila)</td>
+            <td>Inglês(Alda)</td>
+            <td>Química(Venâncio)</td>
+            <td><span style='color: red;' id="mens"></span></td>
+            <td>Ling Prog(Tânia)</td>
+        </tr>
+
+        <tr>
+            <th>08:20</th>
+            <td>Filosofia(André)</td>
+            <td>Mat(Carla)</td>
+            <td>Química(Venâncio)</td>
+            <td>DAW-I(Simone)</td>
+            <td>Ling Prog(Tânia)</td>
+
+        
+        </tr>
+        <tr>
+
+            <th>09:05</th>
+            <th colspan="5">INTERVALO 10 MIN</th>
+            </tr>
+
+        <tr>
+
+            <th>09:15</th>
+            <td>Filosofia(André)</td>
+            <td>Matemática(Carla)</td>
+            <td>Matemática(Carla)</td>
+            <td>DAW-I(Simone)</td>
+            <td>Biologia(Fernanda)</td>
+
+        </tr>
+      
+        <tr>
+            <th>10:00</th>
+            <th colspan="5">INTERVALO 25 MIN</th>
+        </tr>
+
+        <tr>
+            <th>10:25</th>
+            <td>Língua Portuguesa(Rofatto)</td>
+            <td>Sociologia(Carol)</td>
+            <td>Educação Física(Rafael)</td>
+            <td>Biologia(Fernanda)</td>
+            <td>História(Dorival)</td>
+        </tr>
+
+        <tr>
+            <th>11:10</th>
+            <td>Língua Portuguesa(Rofatto)</td>
+            <td>Sociologia(Carol)</td>
+            <td>Educação Física(Rafael)</td>
+            <td>Biologia(Fernanda)</td>
+            <td>História(Dorival)</td>
+        </tr>
+
+        <tr>
+            <th>11:55-13:15</th>
+            <th colspan="5">ALMOÇO</th>
+        </tr>
+
+        <tr>
+            <th>13:15</th>
+            <td><span id="msg"></span> </td>
+            <td>DAW-I(Simone)</td>
+            <td>Projeto Integrador I(Priscila)</td>
+            <td>Literatura(Rosmari)</td>
+            <td> </td>
+        </tr>
+        
+        <tr>
+            <th>14:00</th>
+            <td> </td>
+            <td>DAW-I(Simone)</td>
+            <td>Projeto Integrador I(Priscila)</td>
+            <td>Literatura(Rosmari)</td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <th>14:45</th>
+            <th colspan="5">INTERVALO</th>
+        </tr>
+
+        <tr>
+            <th>14:55</th>
+            <td> </td>
+            <td>Inov Emp(Rosana)</td>
+            <td>DAD(Matioli)</td>
+            <td>Inglês(Alda)</td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <th>15:40</th>
+            <th colspan="5">INTERVALO</th>
+        </tr>
+
+        <tr>
+            <th>16:05</th>
+            <td> </td>
+            <td>Ling Prog(Tânia)</td>
+            <td>DAD(Matioli)</td>
+            <td>Física(Kairalla)</td>
+            <td> </td>
+        </tr>
+        
+        <tr>
+            <th>16:50</th>
+            <td> </td>
+            <td>Ling Prog(Tânia)</td>
+            <td>DAD(Matioli)</td>
+            <td>Física(Kairalla)</td>
+            <td> </td>
+        </tr>
+
+    </table>
+
+    <script>
+       
+            var resposta = prompt("O que você fará na tarde de segunda-feira?(Somente iniciar com verbos, por favor)");
+            while (resposta == " " || !resposta )
+        {
+            alert("Type a value, please");
+            var resposta = prompt("O que você fará na tarde de segunda-feira?(Somente iniciar com verbos, por favor)");
+
+        }
+
+    </script>
+
+</body>
+</html>
