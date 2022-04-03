@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            mark {
+  background-color: rgb(0, 255, 0);
+  color: black;
+  
+}
+
+body {
+font-family: "Times New Roman", cursive;
+font-size:20px;
+}
+.button {
+  background-color: #10929b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+
+        <meta charset="UTF=8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="cotil.png" type="image/icon type">
+        
+        <title>Questionário de Biologia: Vírus</title>
+
+    <script>
+    function correta() { 
+        alert("Alternativa correta!");
+        } 
+        function incorreta() {
+            alert("Alternativa incorreta.");
+        }
+        </script> 
+        </head>
+
+        <script type="text/javascript">
+              var number = 1;
+            function plusOne() {
+
+  var count = document.getElementById('count');
+
+  number++;
+  count.innerHTML = number;
+
+}
+            function display_c(){
+                var refresh=1000; 
+                mytime = setTimeout('display_ct()',refresh)
+            }
+
+            function display_ct() {
+                var x = new Date;
+                document.getElementById('ct').innerHTML = x;
+                display_c();
+            }
+        </script>
+	</head>
+    <body onload=display_ct();>
+
+<div id="testTime" class="testTime">
+
+        <p>Horário:<span style= color:red  id="ct"></span></p>
+       
+            
+<hr>
+        <h1>Questionário: Vírus</h1>
+
+        <h2>Questão 1:Assinale a alternativa correta em relação aos vírus.</h2>
+        <script>
+            function myalert()
+            {
+                alert("Correto!");
+            }
+        </script>
+        <br>
+        <button class="button" onclick="correta();plusOne()" >Os vírus não têm estrutura celular, são menores que as bactérias, possuem uma cápsula de proteína chamada capsídeo e ácido nucleico em seu interior.</button>
+        <button class="button" onclick="incorreta()" >Os vírus possuem organelas celulares, por isso são classificados dentro dos cinco reinos.</button>
+        <button class="button" onclick="incorreta()"> teste</button>
+
+<div>
+    <p style="color: red;">Sua nota é:<span style="color: red" id ="count">1</span></p>
+  </div>
+  
+        </body>
+        </html>
