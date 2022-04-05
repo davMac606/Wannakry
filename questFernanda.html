@@ -25,6 +25,12 @@ font-size:20px;
   margin: 4px 2px;
   cursor: pointer;
 }
+.heading {
+font-weight: bold;
+border-bottom: 2px solid #ddd;
+font-size: 15px;
+width: 98%;
+}
 
     </style>
 
@@ -47,13 +53,15 @@ font-size:20px;
         </head>
 
         <script type="text/javascript">
-              var number = 1;
+              var number = 0;
             function plusOne() {
 
   var count = document.getElementById('count');
 
   number++;
   count.innerHTML = number;
+
+  
 
 }
             function display_c(){
@@ -74,24 +82,39 @@ font-size:20px;
 
         <p>Horário:<span style= color:red  id="ct"></span></p>
        
-            
+            </div>
 <hr>
+    
         <h1>Questionário: Vírus</h1>
+        
+        Cada questão será para confirmar se a afirmação é correta ou incorreta, selecione a alternativa correspondente.<br>
 
-        <h2>Questão 1:Assinale a alternativa correta em relação aos vírus.</h2>
+
+
+        <p>Questão 1:Assinale a alternativa correta em relação aos vírus.</p>
+
         <script>
             function myalert()
             {
                 alert("Correto!");
             }
-        </script>
-        <br>
-        <button class="button" onclick="correta();plusOne()" >Os vírus não têm estrutura celular, são menores que as bactérias, possuem uma cápsula de proteína chamada capsídeo e ácido nucleico em seu interior.</button>
-        <button class="button" onclick="incorreta()" >Os vírus possuem organelas celulares, por isso são classificados dentro dos cinco reinos.</button>
-        <button class="button" onclick="incorreta()"> teste</button>
+            
+    function questao2(){ 
+      window.location.href = "exemplo.html";
+    }
 
+</script>
+<script>
+    export var count
+    
+</script>
+        <br>
+        <button class="button" onclick="correta();plusOne();questao2()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta()">Falso.</button>
+
+   
 <div>
-    <p style="color: red;">Sua nota é:<span style="color: red" id ="count">1</span></p>
+    <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
   </div>
   
         </body>
