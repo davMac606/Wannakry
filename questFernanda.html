@@ -49,6 +49,12 @@ width: 98%;
         function incorreta() {
             alert("Alternativa incorreta.");
         }
+
+        var mySpan = document.createElement("span");
+mySpan = "teste";
+function muda() {
+        document.replaceChild(questao,mySpan);
+}
         </script> 
         </head>
 
@@ -90,9 +96,9 @@ width: 98%;
         Cada questão será para confirmar se a afirmação é correta ou incorreta, selecione a alternativa correspondente.<br>
 
 
-
+<div id="questao">
         <p>Questão 1:Assinale a alternativa correta em relação aos vírus.</p>
-
+</div>
         <script>
             function myalert()
             {
@@ -105,11 +111,11 @@ width: 98%;
 
 </script>
 <script>
-    export var count
+    export default count;
     
 </script>
         <br>
-        <button class="button" onclick="correta();plusOne();questao2()">Verdadeiro.</button>
+        <button class="button" onclick="correta();plusOne();muda()">Verdadeiro.</button>
         <button class="button" onclick="incorreta()">Falso.</button>
 
    
