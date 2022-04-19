@@ -52,8 +52,16 @@ width: 98%;
 
         var mySpan = document.createElement("span");
 mySpan = "teste";
+
+</script>
+
+
+<script>
+
 function muda() {
-        document.replaceChild(questao,mySpan);
+    var questao2 = "Questão 2:Assinale a alternativa correta em relação aos vírus.";
+
+        document.getElementById('questao').innerHTML = questao2;
 }
         </script> 
         </head>
@@ -67,9 +75,10 @@ function muda() {
   number++;
   count.innerHTML = number;
 
-  
 
 }
+</script>
+<script>
             function display_c(){
                 var refresh=1000; 
                 mytime = setTimeout('display_ct()',refresh)
@@ -90,38 +99,60 @@ function muda() {
        
             </div>
 <hr>
-    
+            <div id="tempoDisplay">
+
+            </div>
         <h1>Questionário: Vírus</h1>
-        
-        Cada questão será para confirmar se a afirmação é correta ou incorreta, selecione a alternativa correspondente.<br>
+        <hr>
+        <div id="formulario">
+        Cada questão será para confirmar se a afirmação é correta ou incorreta, selecione a alternativa correspondente.<br><br><br>
 
 
 <div id="questao">
         <p>Questão 1:Assinale a alternativa correta em relação aos vírus.</p>
 </div>
+<script>
+    var tempoRest = 15;
+    var tempo = setInterval(function(){
+
+        if (tempoRest<= 0){
+            clearInterval(tempo);
+            alert("O tempo acabou.");
+            apaga();
+
+        } else {
+
+        document.getElementById('tempoDisplay').innerHTML ="Você tem " +  tempoRest + " segundos restantes.";
+        }
+
+        tempoRest = tempoRest - 1;
+    }, 1000);
+
+    function reseta() {
+        tempoRest = 15;
+    }
+</script>
         <script>
             function myalert()
             {
                 alert("Correto!");
             }
             
-    function questao2(){ 
-      window.location.href = "exemplo.html";
-    }
+            function apaga() {
+            document.getElementById('formulario').innerHTML = "Sua nota foi " + number;
+            }
+</script>
 
-</script>
-<script>
-    export default count;
-    
-</script>
         <br>
-        <button class="button" onclick="correta();plusOne();muda()">Verdadeiro.</button>
+        <button class="button" onclick="correta();plusOne();setTimeout(muda,5000);reseta()">Verdadeiro.</button>
         <button class="button" onclick="incorreta()">Falso.</button>
 
    
 <div>
     <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
   </div>
-  
+
+  </div>
         </body>
         </html>
+    
