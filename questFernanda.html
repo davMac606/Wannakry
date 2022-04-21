@@ -17,7 +17,9 @@ font-size:20px;
 #tempoDisplay {
 color: red;
 }
-
+#aviso {
+    color: red;
+}
 .button {
   background-color: #10929b;
   border: none;
@@ -39,31 +41,46 @@ width: 98%;
 
 #myProgress {
   width: 100%;
+  height: 50px;
   background-color: rgb(0, 225, 255);
   border-radius: 6px;
 }
 
 #myBar {
   width: 1%;
-  height: 30px;
+  height: 50px;
   background-color: green;
   border-radius: 6px;
 }
 
 #questao {
 font-family:sans-serif;
+font-size: 20px;
   -o-animation: fadein 2s;
             animation: fadein 1s;
 }
 
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: 5; }
 }
 
 @-o-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: 5; }
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+}
+
+#caixa {
+    width: 320px;
+  padding: 10px;
+  border: 10px solid rgb(0, 0, 0);
+  margin: 0;
 }
     </style>
 
@@ -76,6 +93,8 @@ font-family:sans-serif;
         <title>Questionário de Biologia: Vírus</title>
 
     <script>
+
+
     function correta() { 
         alert("Alternativa correta!");
         } 
@@ -83,20 +102,8 @@ font-family:sans-serif;
             alert("Alternativa incorreta.");
         }
 
-        var mySpan = document.createElement("span");
-mySpan = "teste";
-
 </script>
 
-
-<script>
-
-function muda() {
-    var questao2 = "Questão 2:Assinale a alternativa correta em relação aos vírus.";
-
-        document.getElementById('questao').innerHTML = questao2;
-}
-        </script> 
         </head>
 
         <script type="text/javascript">
@@ -139,53 +146,20 @@ function muda() {
 
             <p id="tempoDisplay"></p>
 
-        Cada questão será para confirmar se a afirmação é correta ou incorreta, selecione a alternativa correspondente.<br><br><br>
 
+        Em cada questão você deverá confirmar se a afirmação feita é correta ou incorreta.<br><br>
 
-<div id="questao">
-        <p>Questão 1:Assinale a alternativa correta em relação aos vírus.</p>
-</div>
-<script>
-    var tempoRest = 15;
-    var tempo = setInterval(function(){
-
-        if (tempoRest<= 0){
-            clearInterval(tempo);
-            alert("O tempo acabou.");
-            apaga();
-
-        } else {
-
-        document.getElementById('tempoDisplay').innerHTML ="Você tem " +  tempoRest + " segundos restantes.";
-        }
-
-        tempoRest = tempoRest - 1;
-    }, 1000);
-
-    function reseta() {
-        tempoRest = 15;
-    }
-</script>
-        <script>
-            function myalert()
-            {
-                alert("Correto!");
-            }
-            
-            function apaga() {
-            document.getElementById('formulario').innerHTML = "Sua nota foi " + number;
-            }
-</script>
-
+        <div id="aviso5sec">
         <br>
-        <button class="button" id="godbutton" onclick="correta();plusOne();setTimeout(muda,5000);setTimeout(reseta,5000);move()">Verdadeiro.</button>
-        <button class="button" onclick="incorreta();apaga()">Falso.</button>
-        <div id="myProgress">
-            <div id="myBar"></div>
-          </div>
-          <script>
+        </div>
+
+        <div id="caixa">
+        <p id="questao">
+        Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>  
+        </div>
+<!--Começo das funções de questões e respostas-->
+<script>
     var i = 0;
-    var resul = number * 10;
             function move() {
               if (i == 0) {
                 i = 1;
@@ -199,17 +173,117 @@ function muda() {
                   } else {
                     width++;
                     elem.style.width = width + "%";
-                    elem.innerHTML = width  + "%";
+                    elem.innerHTML = width  + "% do teste foi concluído.";
                   }
-                }
-                if (resul >= 100)
-                {
-                    reseta();
                 }
               }
             }
             </script>
- 
+            <script>
+    
+                var tempoRest = 135000;
+                var tempo = setInterval(function(){
+            
+                    if (tempoRest<= 0){
+                        clearInterval(tempo);
+                        alert("O tempo acabou.");
+                        apaga();
+            
+                    } else {
+            
+                    document.getElementById('tempoDisplay').innerHTML ="Você tem " +  tempoRest + " segundos para realizar o questionário. Serão 10 questões, e você terá 15 segundos para cada questão.";
+                    }
+            
+                    tempoRest = tempoRest - 1;
+                }, 1000);
+            
+            </script>
+        <script>
+
+            function aviso() {
+           
+                        var alerta5sec= "Após selecionar se a afirmação é verdadeira ou falsa, aguarde 5 segundos e a próxima questão será gerada.";
+
+document.getElementById('aviso5sec').innerHTML = alerta5sec;
+
+                    }
+
+            function apaga() {
+            if (number <5)
+            {
+                document.getElementById('formulario').innerHTML = "Sua nota foi " + number + ". Estude mais.";
+            }
+            else {
+                document.getElementById('formulario').innerHTML = "Sua nota foi " + number + ", parabéns.";
+            }
+
+            }
+
+
+            function muda2() {
+    var questao2 = "Questão 2: Todos os vírus são classificados como retrovírus.";
+
+        document.getElementById('questao').innerHTML = questao2;
+}
+
+            function muda3() {
+                var questao3 = "Questão 3: Lamarck descobriu os vírus no ano de 1816, estudando o tabaco.";
+
+        document.getElementById('questao').innerHTML = questao3;
+            }
+
+            function muda4() {
+                var questao4 = "Questão 4: Existem vírus que não apresentam ácidos nucleicos, sendo estes utilizados para vacinas.";
+
+        document.getElementById('questao').innerHTML = questao4;
+            }
+            function muda5() {
+                var questao5 = "Questão 5: Alguns vírus não apresentam envelope.";
+
+        document.getElementById('questao').innerHTML = questao5;
+            }
+
+            function muda6() {
+                var questao6 = "Questão 6: Existem vírus que atacam as bactérias, sendo chamados de bacteriófagos. Estes bacteriófagos são utilizados na biotecnologia.";
+
+        document.getElementById('questao').innerHTML = questao6;
+            }
+
+            function muda7() {
+                var questao7 = "Questão 7: Os bacteriófagos têm 2 ciclos reprodutivos: o lítico e o lisogênico.";
+
+        document.getElementById('questao').innerHTML = questao7;
+            }
+
+            function muda8() {
+                var questao8 = "Questão 8: A evolução viral é a mudança de informação genética contida no vírus.";
+
+        document.getElementById('questao').innerHTML = questao8;
+            }
+
+            function muda9() {
+                var questao9 = "Questão 9: Para a infecção viral, são necessários agentes etiológicos, transmissores e hospedeiros.";
+
+        document.getElementById('questao').innerHTML = questao9;
+            }
+
+            function muda10() {
+                var questao10 = "Questão 10: Os vírus são, obrigatoriamente, parasitas intracelulares.";
+
+        document.getElementById('questao').innerHTML = questao10;
+            }
+</script>
+
+<!--Fim das funções de questões e respostas-->
+        <br>
+        <button class="button" id="godbutton" onclick="correta();plusOne();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Falso.</button>
+        <div id="myProgress">
+            <div id="myBar"></div>
+          </div>
+          
+          <button class="button" onclick=apaga()>Enviar
+         </button>
 <div>
     <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
   </div>
