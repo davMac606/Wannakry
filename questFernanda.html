@@ -21,6 +21,9 @@ color: red;
 #aviso {
     color: red;
 }
+.a {
+    color:red;
+}
 .button {
   background-color: #10929b;
   border: none;
@@ -119,6 +122,20 @@ font-size: 20px;
      apaga();
  }
 }
+
+function minusOne() {
+
+var count = document.getElementById('count');
+
+number--;
+count.innerHTML = number;
+
+if (number <= 0)
+{
+    number = 0;
+}
+}
+
 </script>
 <script>
             function display_c(){
@@ -136,7 +153,10 @@ font-size: 20px;
     <body onload=display_ct();>
 
 <div id="testTime" class="testTime">
+    <a href="mailto:cl201238@g.unicamp.br">Contato via e-mail</a><br>
+    <a href="tel:991608205">Contato via telefone</a>
 
+<hr>
         <p>Horário:<span style= color:red  id="ct"></span></p>
        
             </div>
@@ -159,8 +179,16 @@ font-size: 20px;
         <p id="questao">
         Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>  
         </div>
+
 <!--Começo das funções de questões e respostas-->
 <script>
+
+    function aumenta() {
+        var barraProgresso = 0;
+        
+    
+    }
+
     var i = 0;
             function move() {
               if (i == 0) {
@@ -274,20 +302,22 @@ document.getElementById('aviso5sec').innerHTML = alerta5sec;
 
         document.getElementById('questao').innerHTML = questao10;
             }
+
 </script>
 
 <!--Fim das funções de questões e respostas-->
         <br>
-        <button class="button" id="godbutton" onclick="correta();plusOne();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Verdadeiro.</button>
-        <button class="button" onclick="incorreta();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Falso.</button>
+        <button class="button" id="godbutton" onclick="correta();plusOne();setTimeout(muda2,5000);move();aviso();setTimeout(muda3,10000);setTimeout(muda4,15000);(muda5,20000);(muda6,25000);setTimeout(muda7,30000);setTimeout(muda8,35000);setTimeout(muda9,40000);setTimeout(muda10,45000)">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();minusOne();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Falso.</button>
         <div id="myProgress">
             <div id="myBar"></div>
           </div>
-          
-          <button class="button" onclick=apaga()>Enviar
-         </button>
+
+          <button class="button" id="falseBtn"onclick=apaga()>Enviar </button>
 <div>
     <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
+
+    <p>No commit? :(</p>
   </div>
 </div>
         </body>
