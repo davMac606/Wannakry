@@ -102,15 +102,17 @@ font-size: 20px;
         <title>Questionário de Biologia: Vírus</title>
 
     <script>
-     var progresso = 1;
+     var progresso = 0;
 
     function correta() { 
         alert("Alternativa correta!");
         progresso++;
+        move();
         } 
         function incorreta() {
             alert("Alternativa incorreta.");
             progresso++;
+            move();
         }
 
 </script>
@@ -174,13 +176,7 @@ font-size: 20px;
 
 <!--Começo das funções de questões e respostas-->
 <script>
-
-    function aumenta() {
-        var barraProgresso = 0;
-        
-    
-    }
-
+     
     var i = 0;
             function move() {
               if (i == 0) {
@@ -244,10 +240,20 @@ font-size: 20px;
             function disableQuest10() {
                 document.getElementById('quest10').innerHTML = "Questão respondida. ";
             }
+
+
+            if (progresso == 10)
+            {
+                apaga();
+            }
 </script>
 
 <!--Fim das funções de questões e respostas-->
-        
+<div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+<hr>
+<br>
         <div id="caixa">
         <div id="quest1">
         <p>Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>
@@ -331,16 +337,13 @@ font-size: 20px;
         <div id="caixa">
         <div id="quest10">
         <p>Questão 10: Os vírus são, obrigatoriamente, parasitas intracelulares.</p>
-        <button class="button" onclick="correta();plusOne();disableQuest10()">Verdadeiro.</button>
-        <button class="button" onclick="incorreta();disableQuest10()">Falso.</button>
+        <button class="button" onclick="correta();plusOne();disableQuest10()" required>Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest10()" required>Falso.</button>
         </div>
         </div><br><br>
 
 
-        <div id="myProgress">
-            <div id="myBar"></div>
-          </div>
-
+      
           <button class="button" onclick=apaga()>Enviar</button>
 <div>
     <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
