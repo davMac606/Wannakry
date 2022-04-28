@@ -44,7 +44,7 @@ width: 98%;
 }
 
 #myProgress {
-  width: 100%;
+  width: 100;
   height: 50px;
   background-color: rgb(0, 225, 255);
   border-radius: 6px;
@@ -86,6 +86,13 @@ font-size: 20px;
   border: 10px solid rgb(0, 0, 0);
   margin: 0;
 }
+
+.bg {
+    background-image: url("cotil.png");
+
+    height: 100%;
+    width: 100%;
+}
     </style>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,13 +102,15 @@ font-size: 20px;
         <title>Questionário de Biologia: Vírus</title>
 
     <script>
-
+     var progresso = 1;
 
     function correta() { 
         alert("Alternativa correta!");
+        progresso++;
         } 
         function incorreta() {
             alert("Alternativa incorreta.");
+            progresso++;
         }
 
 </script>
@@ -121,19 +130,6 @@ font-size: 20px;
  {
      apaga();
  }
-}
-
-function minusOne() {
-
-var count = document.getElementById('count');
-
-number--;
-count.innerHTML = number;
-
-if (number <= 0)
-{
-    number = 0;
-}
 }
 
 </script>
@@ -175,10 +171,6 @@ if (number <= 0)
         <br>
         </div>
 
-        <div id="caixa">
-        <p id="questao">
-        Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>  
-        </div>
 
 <!--Começo das funções de questões e respostas-->
 <script>
@@ -197,7 +189,7 @@ if (number <= 0)
                 var width = 1;
                 var id = setInterval(frame, 10);
                 function frame() {
-                  if (width >= (number*10)) {
+                  if (width >= (progresso*10)) {
                     clearInterval(id);
                     i = 0;
                   } else {
@@ -209,35 +201,8 @@ if (number <= 0)
               }
             }
             </script>
-            <script>
-    
-                var tempoRest = 135000;
-                var tempo = setInterval(function(){
-            
-                    if (tempoRest<= 0){
-                        clearInterval(tempo);
-                        alert("O tempo acabou.");
-                        apaga();
-            
-                    } else {
-            
-                    document.getElementById('tempoDisplay').innerHTML ="Você tem " +  tempoRest + " segundos para realizar o questionário. Serão 10 questões, e você terá 15 segundos para cada questão.";
-                    }
-            
-                    tempoRest = tempoRest - 1;
-                }, 1000);
-            
-            </script>
+
         <script>
-
-            function aviso() {
-           
-                        var alerta5sec= "Após selecionar se a afirmação é verdadeira ou falsa, aguarde 5 segundos e a próxima questão será gerada.";
-
-document.getElementById('aviso5sec').innerHTML = alerta5sec;
-
-                    }
-
             function apaga() {
             if (number <5)
             {
@@ -249,75 +214,137 @@ document.getElementById('aviso5sec').innerHTML = alerta5sec;
 
             }
 
-
-            function muda2() {
-    var questao2 = "Questão 2: Todos os vírus são classificados como retrovírus.";
-
-        document.getElementById('questao').innerHTML = questao2;
-}
-
-            function muda3() {
-                var questao3 = "Questão 3: Lamarck descobriu os vírus no ano de 1816, estudando o tabaco.";
-
-        document.getElementById('questao').innerHTML = questao3;
+            function disableQuest1() {
+                document.getElementById('quest1').innerHTML = "Questão respondida. ";
             }
-
-            function muda4() {
-                var questao4 = "Questão 4: Existem vírus que não apresentam ácidos nucleicos, sendo estes utilizados para vacinas.";
-
-        document.getElementById('questao').innerHTML = questao4;
+            function disableQuest2() {
+                document.getElementById('quest2').innerHTML = "Questão respondida. ";
             }
-            function muda5() {
-                var questao5 = "Questão 5: Alguns vírus não apresentam envelope.";
-
-        document.getElementById('questao').innerHTML = questao5;
+            function disableQuest3() {
+                document.getElementById('quest3').innerHTML = "Questão respondida. ";
             }
-
-            function muda6() {
-                var questao6 = "Questão 6: Existem vírus que atacam as bactérias, sendo chamados de bacteriófagos. Estes bacteriófagos são utilizados na biotecnologia.";
-
-        document.getElementById('questao').innerHTML = questao6;
+            function disableQuest4() {
+                document.getElementById('quest4').innerHTML = "Questão respondida. ";
             }
-
-            function muda7() {
-                var questao7 = "Questão 7: Os bacteriófagos têm 2 ciclos reprodutivos: o lítico e o lisogênico.";
-
-        document.getElementById('questao').innerHTML = questao7;
+            function disableQuest5() {
+                document.getElementById('quest5').innerHTML = "Questão respondida. ";
             }
-
-            function muda8() {
-                var questao8 = "Questão 8: A evolução viral é a mudança de informação genética contida no vírus.";
-
-        document.getElementById('questao').innerHTML = questao8;
+            function disableQuest6() {
+                document.getElementById('quest6').innerHTML = "Questão respondida. ";
             }
-
-            function muda9() {
-                var questao9 = "Questão 9: Para a infecção viral, são necessários agentes etiológicos, transmissores e hospedeiros.";
-
-        document.getElementById('questao').innerHTML = questao9;
+            function disableQuest7() {
+                document.getElementById('quest7').innerHTML = "Questão respondida. ";
             }
-
-            function muda10() {
-                var questao10 = "Questão 10: Os vírus são, obrigatoriamente, parasitas intracelulares.";
-
-        document.getElementById('questao').innerHTML = questao10;
+            function disableQuest8() {
+                document.getElementById('quest8').innerHTML = "Questão respondida. ";
             }
-
+            function disableQuest9() {
+                document.getElementById('quest9').innerHTML = "Questão respondida. ";
+            }
+            function disableQuest10() {
+                document.getElementById('quest10').innerHTML = "Questão respondida. ";
+            }
 </script>
 
 <!--Fim das funções de questões e respostas-->
-        <br>
-        <button class="button" id="godbutton" onclick="correta();plusOne();setTimeout(muda2,5000);move();aviso();setTimeout(muda3,10000);setTimeout(muda4,15000);(muda5,20000);(muda6,25000);setTimeout(muda7,30000);setTimeout(muda8,35000);setTimeout(muda9,40000);setTimeout(muda10,45000)">Verdadeiro.</button>
-        <button class="button" onclick="incorreta();minusOne();setTimeout(muda2,15000);move();aviso();setTimeout(muda3,30000);setTimeout(muda4,45000);(muda5,60000);(muda6,75000);setTimeout(muda7,90000);setTimeout(muda8,105000);setTimeout(muda9,120000);setTimeout(muda10,135000)">Falso.</button>
+        
+        <div id="caixa">
+        <div id="quest1">
+        <p>Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>
+        <button class="button" id="bt1" onclick="correta();plusOne();disableQuest1()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest1()">Falso.</button>
+        </div>
+        </div><br><br>
+      
+
+        <div id="caixa">
+        <div id="quest2">
+        <p>Questão 2: Todos os vírus são classificados como retrovírus.</p>
+        <button class="button" onclick="incorreta();disableQuest2()">Verdadeiro.</button>
+        <button class="button" onclick="correta();plusOne();disableQuest2()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest3">   
+        <p>Questão 3: Lamarck descobriu os vírus no ano de 1816, estudando o tabaco.</p>
+        <button class="button" onclick="incorreta();disableQuest3()">Verdadeiro.</button>
+        <button class="button" onclick="correta();plusOne();disableQuest3()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest4">
+        <p>Questão 4: Existem vírus que não apresentam ácidos nucleicos, sendo estes utilizados para vacinas.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest4()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest4()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest5">
+        <p>Questão 5: Alguns vírus não apresentam envelope.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest5()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest5()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest6">
+        <p>Questão 6: Existem vírus que atacam as bactérias, sendo chamados de bacteriófagos. Estes bacteriófagos são utilizados na biotecnologia.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest6()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest6()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest7">
+        <p>Questão 7: Os bacteriófagos têm 2 ciclos reprodutivos: o lítico e o lisogênico.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest7()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest7()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest8">
+        <p>Questão 8: A evolução viral é a mudança de informação genética contida no vírus.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest8()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest8()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
+        <div id="caixa">
+        <div id="quest9">
+        <p>Questão 9: Para a infecção viral, são necessários agentes etiológicos, transmissores e hospedeiros.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest9()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest9()">Falso.</button>
+        </div>
+        </div><br><br>
+
+        <div id="caixa">
+        <div id="quest10">
+        <p>Questão 10: Os vírus são, obrigatoriamente, parasitas intracelulares.</p>
+        <button class="button" onclick="correta();plusOne();disableQuest10()">Verdadeiro.</button>
+        <button class="button" onclick="incorreta();disableQuest10()">Falso.</button>
+        </div>
+        </div><br><br>
+
+
         <div id="myProgress">
             <div id="myBar"></div>
           </div>
 
-          <button class="button" id="falseBtn"onclick=apaga()>Enviar </button>
+          <button class="button" onclick=apaga()>Enviar</button>
 <div>
     <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
 
-    <p>No commit? :(</p>
   </div>
 </div>
         </body>
