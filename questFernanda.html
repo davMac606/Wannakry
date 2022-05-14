@@ -2,102 +2,11 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <style>
-
-            mark {
-  background-color: rgb(0, 255, 0);
-  color: black;
-  
-}
-
-body {
-font-family: "Times New Roman", cursive;
-font-size:20px;
-}
-
-#tempoDisplay {
-color: red;
-}
-#aviso {
-    color: red;
-}
-.a {
-    color:red;
-}
-.button {
-  background-color: #10929b;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.heading {
-font-weight: bold;
-border-bottom: 2px solid #ddd;
-font-size: 15px;
-width: 98%;
-}
-
-#myProgress {
-  width: 100;
-  height: 50px;
-  background-color: rgb(0, 225, 255);
-  border-radius: 6px;
-}
-
-#myBar {
-  width: 1%;
-  height: 50px;
-  background-color: green;
-  border-radius: 6px;
-}
-
-#questao {
-font-family:sans-serif;
-font-size: 20px;
-  -o-animation: fadein 2s;
-            animation: fadein 1s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 5; }
-}
-
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 5; }
-}
-
-.fade-in {
-  animation: fadeIn ease 1s;
-  -webkit-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-}
-
-#caixa {
-    width: 320px;
-  padding: 10px;
-  border: 10px solid rgb(0, 0, 0);
-  margin: 0;
-}
-
-.bg {
-    background-image: url("cotil.png");
-
-    height: 100%;
-    width: 100%;
-}
-    </style>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" href="cotil.png" type="image/icon type">
+        
+        <link rel="stylesheet" type="text/css" href="pageStyle.css">
         
         <title>Questionário de Biologia: Vírus</title>
 
@@ -153,7 +62,7 @@ font-size: 20px;
 <div id="testTime" class="testTime">
 
 <hr>
-        <p>Horário:<span style= color:red  id="ct"></span></p>
+        <p>Horário:<span id="ct"></span></p>
        
             </div>
 <hr>
@@ -252,7 +161,7 @@ font-size: 20px;
   </div>
 <hr>
 <br>
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest1">
         <p>Questão 1: Os vírus tem material genético altamente mutagênico, contribuindo para o desenvolvimento de certas vacinas.</p>
         <button class="button" id="bt1" onclick="correta();plusOne();disableQuest1()">Verdadeiro.</button>
@@ -261,7 +170,7 @@ font-size: 20px;
         </div><br><br>
       
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest2">
         <p>Questão 2: Todos os vírus são classificados como retrovírus.</p>
         <button class="button" onclick="incorreta();disableQuest2()">Verdadeiro.</button>
@@ -270,7 +179,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest3">   
         <p>Questão 3: Lamarck descobriu os vírus no ano de 1816, estudando o tabaco.</p>
         <button class="button" onclick="incorreta();disableQuest3()">Verdadeiro.</button>
@@ -279,7 +188,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest4">
         <p>Questão 4: Existem vírus que não apresentam ácidos nucleicos, sendo estes utilizados para vacinas.</p>
         <button class="button" onclick="correta();plusOne();disableQuest4()">Verdadeiro.</button>
@@ -288,7 +197,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest5">
         <p>Questão 5: Alguns vírus não apresentam envelope.</p>
         <button class="button" onclick="correta();plusOne();disableQuest5()">Verdadeiro.</button>
@@ -297,7 +206,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest6">
         <p>Questão 6: Existem vírus que atacam as bactérias, sendo chamados de bacteriófagos. Estes bacteriófagos são utilizados na biotecnologia.</p>
         <button class="button" onclick="correta();plusOne();disableQuest6()">Verdadeiro.</button>
@@ -306,7 +215,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest7">
         <p>Questão 7: Os bacteriófagos têm 2 ciclos reprodutivos: o lítico e o lisogênico.</p>
         <button class="button" onclick="correta();plusOne();disableQuest7()">Verdadeiro.</button>
@@ -315,7 +224,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest8">
         <p>Questão 8: A evolução viral é a mudança de informação genética contida no vírus.</p>
         <button class="button" onclick="correta();plusOne();disableQuest8()">Verdadeiro.</button>
@@ -324,7 +233,7 @@ font-size: 20px;
         </div><br><br>
 
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest9">
         <p>Questão 9: Para a infecção viral, são necessários agentes etiológicos, transmissores e hospedeiros.</p>
         <button class="button" onclick="correta();plusOne();disableQuest9()">Verdadeiro.</button>
@@ -332,7 +241,7 @@ font-size: 20px;
         </div>
         </div><br><br>
 
-        <div id="caixa">
+        <div class="caixa">
         <div id="quest10">
         <p>Questão 10: Os vírus são, obrigatoriamente, parasitas intracelulares.</p>
         <button class="button" onclick="correta();plusOne();disableQuest10()" required>Verdadeiro.</button>
@@ -344,7 +253,7 @@ font-size: 20px;
       
           <button class="button" onclick=apaga()>Enviar</button>
 <div>
-    <p style="color: red;">Sua nota é:<span style="color: red" id ="count">0</span></p>
+    <p>Sua nota é:<span id ="count">0</span></p>
 
   </div>
 </div>
