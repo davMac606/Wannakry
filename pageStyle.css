@@ -1,0 +1,90 @@
+
+mark {
+background-color: rgb(0, 255, 0);
+color: black;
+
+}
+
+body {
+font-family: "Times New Roman", cursive;
+font-size:20px;
+}
+
+#tempoDisplay {
+color: red;
+}
+#aviso {
+color: red;
+}
+.a {
+color:red;
+}
+.button {
+background-color: #10929b;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+.heading {
+font-weight: bold;
+border-bottom: 2px solid #ddd;
+font-size: 15px;
+width: 98%;
+}
+
+#myProgress {
+width: 100;
+height: 50px;
+background-color: rgb(0, 225, 255);
+border-radius: 6px;
+}
+
+#myBar {
+width: 1%;
+height: 50px;
+background-color: green;
+border-radius: 6px;
+}
+
+#questao {
+font-family:sans-serif;
+font-size: 20px;
+-o-animation: fadein 2s;
+animation: fadein 1s;
+}
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 5; }
+}
+
+@-o-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 5; }
+}
+
+.fade-in {
+
+-webkit-animation: fadeIn ease 1s;
+-o-animation: fadeIn ease 1s;
+animation: fadeIn ease 1s;
+}
+#caixa {
+width: 320px;
+padding: 10px;
+border: 10px solid rgb(0, 0, 0);
+margin: 0;
+}
+
+.bg {
+background-image: url("cotil.png");
+
+height: 100%;
+width: 100%;
+}
